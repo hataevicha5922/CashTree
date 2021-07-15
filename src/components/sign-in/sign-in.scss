@@ -1,0 +1,21 @@
+.sign-header {
+  justify-content: center !important;
+}
+.sign-in-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 0 0;
+  .sign-in-form {
+    border: 1px solid rgb(113, 207, 154);
+    border-radius: 15px;
+    padding: 50px;
+    width: 50%;
+  }
+}
+.sign-in-footer {
+  text-align: center;
+  padding: 30px;
+  .sign-up-link {
+    color: rgb(113, 207, 154);
+  }
+}
