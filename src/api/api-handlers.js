@@ -4,5 +4,3 @@ import { FIREBASE_CONFIG, databaseURL } from './api-config';
 export const initApi = () => {
   return firebase.initializeApp(FIREBASE_CONFIG);
 };
-
-// export const h = () => console.log('Hello world');
