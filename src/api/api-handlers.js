@@ -9,15 +9,22 @@ export const initApi = () => {
   return firebase.initializeApp(FIREBASE_CONFIG);
 };
 
-export const signIn = () => {
+export const signIn = (email, password) => {
   return axios
     .post(authUrl, {
-      email: 'test@mail.com',
-      password: '111111',
+      email,
+      password,
       returnSecureToken: true,
     })
     .then((response) => response)
     .catch((err) => console.log(err));
+};
+
+export const signUp = async (email, password) => {
+  return firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then((response) => response);
 };
 
 initApi();

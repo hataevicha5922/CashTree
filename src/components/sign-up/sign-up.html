@@ -13,79 +13,63 @@
     <title>Sign Up</title>
   </head>
   <body>
-    <header class="header header-sign-in">
+    <header class="header header-sign-up">
       <div class="container">
         <div class="header-wrapper sign-header">
-          <h1 class="header-title sign-in-title">
+          <h1 class="header-title sign-up-title">
             <a class="main-page-link" href="index.html">CashTree</a>
           </h1>
         </div>
       </div>
     </header>
-    <main class="sign-in-main">
-      <div class="container sign-in-wrapper">
-        <form class="sign-in-form">
+    <main class="sign-up-main">
+      <div class="container sign-up-wrapper">
+        <form class="sign-up-form">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">FirstName</label>
+            <label for="userName" class="form-label">FirstName</label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="userName"
               aria-describedby="emailHelp"
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >SecondName</label
-            >
+            <label for="secondName" class="form-label">SecondName</label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="secondName"
               aria-describedby="emailHelp"
             />
           </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >PhoneNumber</label
-            >
+          <!-- <div class="mb-3">
+            <label for="phone" class="form-label">PhoneNumber</label>
             <input
               type="tel"
               class="form-control"
-              id="exampleInputEmail1"
+              id="phone"
               aria-describedby="emailHelp"
             />
-          </div>
+          </div> -->
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
+            <label for="email" class="form-label">Email address</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="email"
               aria-describedby="emailHelp"
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
+            <label for="password_1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password_1" />
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
+            <label for="password_2" class="form-label"
               >Verification Password</label
             >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
+            <input type="password" class="form-control" id="password_2" />
           </div>
           <button type="submit" class="btn btn-success">Sign Up</button>
         </form>
