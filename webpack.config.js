@@ -20,6 +20,10 @@ module.exports = {
       filename: 'sign-up.html',
       template: './src/components/sign-up/sign-up.html',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'main-page.html',
+      template: './src/components/main-page/main-page.html',
+    }),
   ],
   module: {
     rules: [
@@ -34,6 +38,21 @@ module.exports = {
             loader: 'html-loader',
             options: {
               sources: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
             },
           },
         ],
