@@ -31,12 +31,16 @@
               id="email"
               aria-describedby="emailHelp"
             />
+            <p class="input-error" id="emailError"></p>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" />
+            <p class="input-error" id="passwordLengthError"></p>
           </div>
-          <button type="submit" class="btn btn-success">Sign In</button>
+          <button id="signInBtn" type="submit" class="btn btn-success">
+            Sign In
+          </button>
         </form>
       </div>
     </main>
