@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.header {
+  background-color: rgb(113, 207, 154);
+  padding: 15px 0;
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-title {
+      margin-left: 20px;
+    }
+
+    .header-links {
+      display: flex;
+
+      .header-link {
+        border: 1px solid #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 20px;
+        background-color: #fff;
+
+        .sign-link {
+          color: rgb(64, 167, 109);
+        }
+      }
+    }
+  }
+}
+.start-page {
+  height: 90vh;
+  background-image: url('../../src/images/illustration-logo-money-tree.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}

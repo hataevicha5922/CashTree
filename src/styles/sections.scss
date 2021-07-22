@@ -1,0 +1,23 @@
+.main {
+  .salary {
+    border-bottom: 1px solid;
+    padding: 20px 0;
+  }
+  .section-title {
+    margin-bottom: 25px;
+  }
+  .salary-wrapper {
+    margin: 10px 0;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .salary-total {
+    text-align: end;
+    padding-top: 30px;
+  }
+  .spent-total {
+    color: rgba(240, 60, 6, 0.904);
+  }
+}

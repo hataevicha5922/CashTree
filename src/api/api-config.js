@@ -9,3 +9,4 @@ export const FIREBASE_CONFIG = {
 };
 
 export const databaseURL = 'https://cashtree-fb24e-default-rtdb.firebaseio.com';
+export const authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_CONFIG.apiKey}`;
