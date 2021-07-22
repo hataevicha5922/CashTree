@@ -8,11 +8,9 @@ window.onload = () => {
   const pathname = Object.values(paths).find(
     (path) => path === window.location.pathname
   );
-  // console.log(pathname);
 
   switch (pathname) {
     case paths.home:
-      // window.location.href = routes.sign_in;
       break;
     case paths.sign_in:
       signInHandler();
