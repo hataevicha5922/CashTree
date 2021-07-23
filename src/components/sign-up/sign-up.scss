@@ -1,15 +1,80 @@
+@import '../../styles/colors.scss';
+@import '../../styles/variabels.scss';
+
 .sign-header {
   justify-content: center !important;
 }
+
 .sign-up-wrapper {
   display: flex;
   justify-content: center;
   padding: 50px 0 0 0;
+
   .sign-up-form {
-    border: 1px solid rgb(113, 207, 154);
+    border: 1px solid $colorBorder;
     border-radius: 15px;
     padding: 50px;
     width: 50%;
+
+    &-password-strength {
+      width: 300px;
+      height: 100px;
+      display: none;
+      border: 1px solid $colorBorder;
+      border-radius: $border-radius;
+      padding: 10px;
+      margin: 10px;
+      background-color: rgb(240, 232, 232);
+
+      &-status {
+        height: 10px;
+        border: 1px solid black;
+        border-radius: $border-radius;
+
+        &-filler {
+          height: 8px;
+          border-radius: $border-radius;
+
+          &.weak {
+            width: 25%;
+            background-color: red;
+          }
+
+          &.moderate {
+            width: 50%;
+            background-color: yellow;
+          }
+
+          &.strong {
+            width: 75%;
+            background-color: yellowgreen;
+          }
+
+          &.veryStrong {
+            width: 100%;
+            background-color: $colorBorder;
+          }
+        }
+
+        &-current {
+          &-weak {
+            color: red;
+          }
+
+          &-moderate {
+            color: rgb(82, 82, 41);
+          }
+
+          &-strong {
+            color: yellowgreen;
+          }
+
+          &-complete {
+            color: $colorBorder;
+          }
+        }
+      }
+    }
   }
 }
 .sign-up-footer {

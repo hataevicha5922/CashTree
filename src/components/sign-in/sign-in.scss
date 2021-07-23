@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 .sign-header {
   justify-content: center !important;
 }
@@ -6,7 +8,7 @@
   justify-content: center;
   padding: 50px 0 0 0;
   .sign-in_form {
-    border: 1px solid rgb(113, 207, 154);
+    border: 1px solid $colorBorder;
     border-radius: 15px;
     padding: 50px;
     width: 50%;
@@ -16,7 +18,7 @@
   text-align: center;
   padding: 30px;
   .sign-up-link {
-    color: rgb(113, 207, 154);
+    color: $colorBorder;
   }
 }
 .main-page-link {
