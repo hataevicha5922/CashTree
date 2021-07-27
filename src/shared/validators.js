@@ -1,5 +1,5 @@
 import { REGEXP } from './constants/regexp';
-import { PASSWORD_STRENGTHS } from '../shared/constants/common';
+import { PASSWORD_STRENGTHS, PASSWORD_INFO } from '../shared/constants/common';
 
 export const passwordLengthValidator = (password) =>
   password.match(REGEXP.PASSWORD_LENGTH);
@@ -12,14 +12,53 @@ const validation_status = document.querySelector(
   '.sign-up-form-password-strength-status-current'
 );
 
-const lowerCaseCheck = (password) => REGEXP.LOWER_CASE.test(password);
+const lowerCaseCheck = (password) => {
+  const validation_info = document.querySelector(
+    '.sign-up-form-password-strength-status-info-lowercase'
+  );
+  validation_info.innerText = PASSWORD_INFO.lowercase;
+  const result = REGEXP.LOWER_CASE.test(password);
+  result
+    ? (validation_info.style.color = 'blue')
+    : (validation_info.style.color = 'grey');
+  return result;
+};
 
-const upperCaseCheck = (password) => REGEXP.UPPER_CASE.test(password);
+const upperCaseCheck = (password) => {
+  const validation_info = document.querySelector(
+    '.sign-up-form-password-strength-status-info-uppercase'
+  );
+  validation_info.innerText = PASSWORD_INFO.uppercase;
+  const result = REGEXP.UPPER_CASE.test(password);
+  result
+    ? (validation_info.style.color = 'blue')
+    : (validation_info.style.color = 'grey');
+  return result;
+};
 
-const numberCheck = (password) => REGEXP.NUMBERS.test(password);
+const numberCheck = (password) => {
+  const validation_info = document.querySelector(
+    '.sign-up-form-password-strength-status-info-numbers'
+  );
+  validation_info.innerText = PASSWORD_INFO.numbers;
+  const result = REGEXP.NUMBERS.test(password);
+  result
+    ? (validation_info.style.color = 'blue')
+    : (validation_info.style.color = 'grey');
+  return result;
+};
 
-const eightCharactersCheck = (password) =>
-  REGEXP.EIGHT_CHARACTERS.test(password);
+const eightCharactersCheck = (password) => {
+  const validation_info = document.querySelector(
+    '.sign-up-form-password-strength-status-info-characters'
+  );
+  validation_info.innerText = PASSWORD_INFO.characters;
+  const result = REGEXP.EIGHT_CHARACTERS.test(password);
+  result
+    ? (validation_info.style.color = 'blue')
+    : (validation_info.style.color = 'grey');
+  return result;
+};
 
 export const passwordStrengthController = (password) => {
   let passwordStrength;

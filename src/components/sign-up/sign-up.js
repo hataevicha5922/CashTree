@@ -1,5 +1,7 @@
 import { signUp } from '../../api/api-handlers';
 import { setUserEmail } from '../../shared/ls-service';
+import { routes } from '../../shared/constants/routs';
+
 import {
   passwordStrengthController,
   emailLengthValidator,
@@ -24,6 +26,7 @@ export const singUpHandler = () => {
   const emailInput = document.getElementById('email');
   const userNameInput = document.getElementById('userName');
   const userSurnameInput = document.getElementById('surname');
+  const userInfo = document.getElementById('header-links-info');
 
   const formFields = {
     userName: {
@@ -126,4 +129,19 @@ export const singUpHandler = () => {
       ? signup_btn.removeAttribute('disabled')
       : signup_btn.setAttribute('disabled', true);
   };
+
+  signUpForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = emailInput.value;
+    const password = password_1.value;
+    signUp(email, password).then((response) => {
+      if (response) {
+        // console.log(response.user.uid);
+        setUserEmail(response.user.email);
+        console.log(userInfo);
+        userInfo.innerText = response.user.email;
+        window.location.href = routes.main_page;
+      }
+    });
+  });
 };

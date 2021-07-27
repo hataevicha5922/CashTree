@@ -20,6 +20,10 @@ module.exports = {
       filename: 'sign-up.html',
       template: './src/components/sign-up/sign-up.html',
     }),
+    // new HTMLWebpackPlugin({
+    //   filename: 'welcome.html',
+    //   template: './src/components/welcome/welcome.html',
+    // }),
     new HTMLWebpackPlugin({
       filename: 'main-page.html',
       template: './src/components/main-page/main-page.html',
