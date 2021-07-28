@@ -1,10 +1,6 @@
 @import '../../styles/colors.scss';
 @import '../../styles/variabels.scss';
 
-// .sign-header {
-//   justify-content: center !important;
-// }
-
 .sign-up-wrapper {
   display: flex;
   justify-content: center;
@@ -19,7 +15,7 @@
     &-password-strength {
       width: 300px;
       height: 200px;
-      display: block;
+      display: none;
       border: 1px solid $colorBorder;
       border-radius: $border-radius;
       padding: 10px;
