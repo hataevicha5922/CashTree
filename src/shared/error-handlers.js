@@ -65,3 +65,12 @@ export const hidePasswordsComparerError = () => {
   const errorTag = document.getElementById('passwordsCompereError');
   errorTag.style.display = 'none';
 };
+
+export const showErrorAuthMessage = (err) => {
+  const authError = document.getElementById('authError');
+  authError.style.display = 'block';
+  authError.innerText = err.message;
+  setTimeout(() => {
+    authError.style.display = 'none';
+  }, 5000);
+};

@@ -5,32 +5,46 @@ a {
 .header {
   background-color: rgb(113, 207, 154);
   padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .header-wrapper {
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-title {
+    margin-left: 20px;
+    a {
+      color: black;
+    }
+  }
+
+  .header-links {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: baseline;
 
-    .header-title {
-      margin-left: 20px;
+    &-info {
+      margin-right: 20px;
     }
 
-    .header-links {
-      display: flex;
+    &-link {
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right: 20px;
+      background-color: #fff;
 
-      .header-link {
-        border: 1px solid #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        margin-right: 20px;
-        background-color: #fff;
-
-        .sign-link {
-          color: rgb(64, 167, 109);
-        }
+      &-btn {
+        color: rgb(64, 167, 109);
       }
     }
   }
+}
+
+.header-sign {
+  justify-content: center;
 }
 .start-page {
   height: 90vh;

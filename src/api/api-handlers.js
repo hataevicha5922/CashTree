@@ -2,7 +2,10 @@ import firebase from 'firebase/app';
 import axios from 'axios';
 
 import { FIREBASE_CONFIG, databaseURL, authUrl } from './api-config';
-import { showErrorNotification } from '../shared/error-handlers';
+import {
+  showErrorNotification,
+  showErrorAuthMessage,
+} from '../shared/error-handlers';
 
 require('firebase/auth');
 
@@ -27,7 +30,10 @@ export const signUp = async (email, password) => {
   return firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then((response) => response);
+    .then((response) => response)
+    .catch((err) => {
+      showErrorAuthMessage(err);
+    });
 };
 
 initApi();
