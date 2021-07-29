@@ -134,13 +134,8 @@ export const singUpHandler = () => {
     event.preventDefault();
     const email = emailInput.value;
     const password = password_1.value;
-    signUp(email, password).then((response) => {
-      if (response) {
-        setUserEmail(response.user.email);
-        console.log(userInfo);
-        userInfo.innerText = response.user.email;
-        window.location.href = routes.main_page;
-      }
-    });
+    signUp(email, password).then(
+      (response) => (window.location.href = routes.main_page)
+    );
   });
 };

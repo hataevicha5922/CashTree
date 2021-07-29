@@ -2,6 +2,11 @@ import { routes, paths } from './shared/constants/routs';
 import { signInHandler } from './components/sign-in/sign-in';
 import { logoutBtnHandler } from './components/profile/profile';
 import { singUpHandler } from './components/sign-up/sign-up';
+import {
+  incomeHandler,
+  expensesHandler,
+  balanceHandler,
+} from './components/main-page/main-page';
 import './styles/styles.scss';
 
 window.onload = () => {
@@ -17,6 +22,8 @@ window.onload = () => {
       break;
     case paths.main_page:
       logoutBtnHandler();
+      incomeHandler();
+      expensesHandler();
       break;
     case paths.sign_up:
       singUpHandler();

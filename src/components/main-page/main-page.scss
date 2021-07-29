@@ -1,0 +1,85 @@
+.main {
+  .finance {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &-value {
+      width: 100%;
+      border-right: 1px solid rgb(219, 213, 213);
+      border-bottom: 1px solid rgb(219, 213, 213);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+      background-color: rgb(253, 251, 251);
+
+      p {
+        font-size: 20px;
+      }
+      &-income {
+        color: green;
+
+        &-description {
+          font-size: 13px !important;
+          color: green;
+        }
+      }
+
+      &-expenses {
+        color: rgb(255, 51, 0);
+
+        &-description {
+          font-size: 13px !important;
+          color: rgb(255, 51, 0);
+        }
+      }
+
+      &-balance {
+        color: green;
+
+        &-description {
+          font-size: 13px !important;
+          color: green;
+        }
+      }
+    }
+  }
+  .bookkeeping {
+    &-buttons {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+
+      &-btn {
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 10px;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &:hover {
+          background-color: rgb(159, 209, 211);
+          box-shadow: 5px 5px 5px rgb(204, 202, 202);
+        }
+
+        &-income {
+          width: 100%;
+          color: green;
+        }
+
+        &-expenses {
+          color: rgb(255, 51, 0);
+        }
+
+        &-investments {
+          color: green;
+        }
+      }
+    }
+  }
+}
