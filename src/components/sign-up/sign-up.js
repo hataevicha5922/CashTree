@@ -26,6 +26,7 @@ export const singUpHandler = () => {
   const emailInput = document.getElementById('email');
   const userNameInput = document.getElementById('userName');
   const userSurnameInput = document.getElementById('surname');
+  const preloader = document.getElementById('preloader');
   const userInfo = document.getElementById('header-links-info');
 
   const formFields = {
@@ -47,6 +48,9 @@ export const singUpHandler = () => {
   };
 
   signup_btn.setAttribute('disabled', true);
+  signup_btn.addEventListener('click', () => {
+    preloader.style.display = 'block';
+  });
 
   userNameInput.oninput = () => {
     if (nameValidator(userNameInput.value)) {
@@ -134,13 +138,8 @@ export const singUpHandler = () => {
     event.preventDefault();
     const email = emailInput.value;
     const password = password_1.value;
-    signUp(email, password).then((response) => {
-      if (response) {
-        setUserEmail(response.user.email);
-        console.log(userInfo);
-        userInfo.innerText = response.user.email;
-        window.location.href = routes.main_page;
-      }
-    });
+    signUp(email, password).then(
+      (response) => (window.location.href = routes.main_page)
+    );
   });
 };
