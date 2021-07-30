@@ -26,6 +26,7 @@ export const singUpHandler = () => {
   const emailInput = document.getElementById('email');
   const userNameInput = document.getElementById('userName');
   const userSurnameInput = document.getElementById('surname');
+  const preloader = document.getElementById('preloader');
   const userInfo = document.getElementById('header-links-info');
 
   const formFields = {
@@ -47,6 +48,9 @@ export const singUpHandler = () => {
   };
 
   signup_btn.setAttribute('disabled', true);
+  signup_btn.addEventListener('click', () => {
+    preloader.style.display = 'block';
+  });
 
   userNameInput.oninput = () => {
     if (nameValidator(userNameInput.value)) {
