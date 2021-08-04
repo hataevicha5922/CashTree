@@ -1,57 +1,29 @@
-a {
-  text-decoration: none;
-  color: #fff;
-}
-.header {
-  background-color: rgb(113, 207, 154);
-  padding: 15px 0;
-  align-items: center;
-  justify-content: space-between;
-}
+@import './colors.scss';
 
 .header-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  .header-title {
-    margin-left: 20px;
-    a {
-      color: black;
-    }
-  }
-
-  .header-links {
-    display: flex;
-    align-items: baseline;
-
-    &-info {
-      margin-right: 20px;
-    }
-
-    &-link {
-      border: 1px solid #fff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      margin-right: 20px;
-      background-color: #fff;
-
-      &-btn {
-        color: rgb(64, 167, 109);
-      }
-    }
-  }
-}
-
-.header-sign {
   justify-content: center;
+  padding: 15px;
+
+  &__nav {
+    a {
+      color: $mainColor;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 30px;
+      opacity: 0.7;
+    }
+  }
+  a:hover {
+    border-bottom: 1px solid;
+  }
 }
-.start-page {
-  height: 90vh;
-  background-image: url('../../src/images/illustration-logo-money-tree.jpg');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100% 100%;
-  opacity: 0.5;
+.main-btns {
+  width: 100%;
+  text-align: center;
+
+  &-btn {
+    color: $mainColor;
+  }
 }

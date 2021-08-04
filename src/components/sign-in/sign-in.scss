@@ -1,26 +1,41 @@
 @import '../../styles/colors.scss';
 
-// .sign-header {
-//   justify-content: center !important;
-// }
-.sign-in-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0 0 0;
-  .sign-in_form {
-    border: 1px solid $colorBorder;
-    border-radius: 15px;
-    padding: 50px;
-    width: 50%;
+.page-sign-in {
+  height: 100vh;
+  background-image: url('../images/white-boards-as-background.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100% 100%;
+
+  a {
+    color: black;
+    letter-spacing: 0.2em;
+    font-size: 20px;
+  }
+
+  .sign-in-main {
+    padding: 20px;
+    .sign-in-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sign-in_form {
+      width: 50%;
+      margin: 0 auto;
+      padding: 40px;
+      border: 1px solid black;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.44);
+      background-color: $bgModal;
+    }
   }
 }
+
 .sign-in-footer {
   text-align: center;
   padding: 30px;
   .sign-up-link {
-    color: $colorBorder;
+    color: $mainColor;
   }
-}
-.main-page-link {
-  color: #000;
 }

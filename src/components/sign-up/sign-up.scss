@@ -1,88 +1,115 @@
 @import '../../styles/colors.scss';
 @import '../../styles/variabels.scss';
 
-.sign-up-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0 0 0;
+.page-sign-up {
+  height: 100%;
+  background-image: url('../images/white-boards-as-background.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100% 100%;
 
-  .sign-up-form {
-    border: 1px solid $colorBorder;
-    border-radius: 15px;
-    padding: 50px;
-    width: 50%;
+  a {
+    color: black;
+    letter-spacing: 0.2em;
+    font-size: 20px;
+  }
+  .sign-up-main {
+    padding: 20px;
 
-    &-password-strength {
-      width: 300px;
-      height: 200px;
-      display: none;
-      border: 1px solid $colorBorder;
-      border-radius: $border-radius;
-      padding: 10px;
-      margin: 10px;
-      background-color: rgb(240, 232, 232);
+    .sign-up-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sign-up_form {
+      width: 50%;
+      margin: 0 auto;
+      padding: 40px;
+      border: 1px solid black;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.44);
+      background-color: $bgModal;
 
-      &-status {
-        height: 10px;
-        border: 1px solid black;
-        border-radius: $border-radius;
+      .sign-up-form {
+        border: 1px solid $colorBorder;
+        border-radius: 15px;
+        padding: 50px;
+        width: 50%;
 
-        &-filler {
-          height: 8px;
+        &-password-strength {
+          width: 300px;
+          height: 200px;
+          display: none;
+          border: 1px solid $colorBorder;
           border-radius: $border-radius;
-
-          &.weak {
-            width: 25%;
-            background-color: red;
-          }
-
-          &.moderate {
-            width: 50%;
-            background-color: yellow;
-          }
-
-          &.strong {
-            width: 75%;
-            background-color: yellowgreen;
-          }
-
-          &.veryStrong {
-            width: 100%;
-            background-color: $colorBorder;
-          }
-        }
-
-        &-info {
+          padding: 10px;
           margin: 10px;
+          background-color: rgb(240, 232, 232);
 
-          p {
-            margin: 0;
-            font-size: 12px;
-            color: grey;
-          }
-        }
+          &-status {
+            height: 10px;
+            border: 1px solid black;
+            border-radius: $border-radius;
 
-        &-current {
-          &-weak {
-            color: red;
-          }
+            &-filler {
+              height: 8px;
+              border-radius: $border-radius;
 
-          &-moderate {
-            color: rgb(82, 82, 41);
-          }
+              &.weak {
+                width: 25%;
+                background-color: red;
+              }
 
-          &-strong {
-            color: yellowgreen;
-          }
+              &.moderate {
+                width: 50%;
+                background-color: yellow;
+              }
 
-          &-complete {
-            color: $colorBorder;
+              &.strong {
+                width: 75%;
+                background-color: yellowgreen;
+              }
+
+              &.veryStrong {
+                width: 100%;
+                background-color: $colorBorder;
+              }
+            }
+
+            &-info {
+              margin: 10px;
+
+              p {
+                margin: 0;
+                font-size: 12px;
+                color: grey;
+              }
+            }
+
+            &-current {
+              &-weak {
+                color: red;
+              }
+
+              &-moderate {
+                color: rgb(82, 82, 41);
+              }
+
+              &-strong {
+                color: yellowgreen;
+              }
+
+              &-complete {
+                color: $colorBorder;
+              }
+            }
           }
         }
       }
     }
   }
 }
+
 .sign-up-footer {
   text-align: center;
   padding: 30px;

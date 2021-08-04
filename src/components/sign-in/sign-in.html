@@ -13,46 +13,49 @@
     <title>Sign In</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header-wrapper header-sign">
-          <h1 class="header-title">
-            <a href="index.html">CashTree</a>
-          </h1>
+    <div class="page-sign-in">
+      <header class="header">
+        <div class="container">
+          <div class="header-wrapper">
+            <h1 class="header-title">
+              <a href="../../index.html" class="header-link">CashTree</a>
+            </h1>
+          </div>
         </div>
-      </div>
-    </header>
-    <main class="sign-in-main">
-      <div class="container sign-in-wrapper">
-        <form class="sign-in_form">
-          <div class="mb-3">
-            <label for="email" class="form-label"> Email address </label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-            />
-            <p class="input-error" id="emailError"></p>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" />
-            <p class="input-error" id="passwordLengthError"></p>
-          </div>
-          <button id="signInBtn" type="submit" class="btn btn-success">
-            Sign In
-          </button>
-        </form>
-      </div>
-    </main>
-    <footer class="sign-in-footer">
-      <div class="container">
-        <a href="sign-up.html" class="sign-up-link" target="_top">
-          Registration
-        </a>
-      </div>
-    </footer>
+      </header>
+      <main class="sign-in-main">
+        <div class="container">
+          <h1 class="sign-in-title">Sign In</h1>
+          <form class="sign-in_form">
+            <div class="mb-3">
+              <label for="email" class="form-label"> Email address </label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+              <p class="input-error" id="emailError"></p>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" />
+              <p class="input-error" id="passwordLengthError"></p>
+            </div>
+            <button id="signInBtn" type="submit" class="btn btn-secondary">
+              Sign In
+            </button>
+          </form>
+        </div>
+      </main>
+      <footer class="sign-in-footer">
+        <div class="container">
+          <a href="sign-up.html" class="sign-up-link" target="_top">
+            Registration
+          </a>
+        </div>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

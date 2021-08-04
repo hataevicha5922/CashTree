@@ -13,91 +13,112 @@
     <title>Sign Up</title>
   </head>
   <body>
-
     <div id="preloader" class="preloader preloader-done">
-      <div class="loader"></div>
-    </div>
-    <header class="header">
-      <div class="container">
-        <div class="header-wrapper header-sign">
-          <h1 class="header-title">
-            <a href="index.html">CashTree</a>
-          </h1>
-        </div>
+      <div class="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
       </div>
-    </header>
-    </header>
-    <main class="sign-up-main">
-      <div class="container sign-up-wrapper">
-        <form class="sign-up-form">
-          <div class="mb-3">
-            <label for="userName" class="form-label">FirstName</label>
-            <input
-              type="text"
-              class="form-control"
-              id="userName"
-              aria-describedby="emailHelp"
-            />
-            <p class="input-error" id="userNameError"></p>
+    </div>
+    <div class="page-sign-up">
+      <header class="header">
+        <div class="container">
+          <div class="header-wrapper">
+            <h1 class="header-title">
+              <a href="../../index.html" class="header-link">CashTree</a>
+            </h1>
           </div>
-          <div class="mb-3">
-            <label for="secondName" class="form-label">Surname</label>
-            <input
-              type="text"
-              class="form-control"
-              id="surname"
-              aria-describedby="emailHelp"
-            />
-            <p class="input-error" id="userSurnameError"></p>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label"> Email address </label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-            />
-            <p class="input-error" id="emailError"></p>
-          </div>
-          <div class="mb-3">
-            <label for="password_1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password_1" />
-            <div class="sign-up-form-password-strength">
-              <p>Password strength</p>
-              <div class="sign-up-form-password-strength-status">
-                <div class="sign-up-form-password-strength-status-filler"></div>
-                <p class="sign-up-form-password-strength-status-current"></p>
-                <div class="sign-up-form-password-strength-status-info">
-                  <p class="sign-up-form-password-strength-status-info-uppercase"></p>
-                  <p class="sign-up-form-password-strength-status-info-lowercase"></p>
-                  <p class="sign-up-form-password-strength-status-info-numbers"></p>
-                  <p class="sign-up-form-password-strength-status-info-characters"></p>
+        </div>
+      </header>
+      <main class="sign-up-main">
+        <div class="container">
+          <h1 class="sign-up-title">Sign Up</h1>
+          <form class="sign-up_form">
+            <div class="mb-3">
+              <label for="userName" class="form-label">FirstName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="userName"
+                aria-describedby="emailHelp"
+              />
+              <p class="input-error" id="userNameError"></p>
+            </div>
+            <div class="mb-3">
+              <label for="secondName" class="form-label">Surname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="surname"
+                aria-describedby="emailHelp"
+              />
+              <p class="input-error" id="userSurnameError"></p>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"> Email address </label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+              <p class="input-error" id="emailError"></p>
+            </div>
+            <div class="mb-3">
+              <label for="password_1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password_1" />
+              <div class="sign-up-form-password-strength">
+                <p>Password strength</p>
+                <div class="sign-up-form-password-strength-status">
+                  <div
+                    class="sign-up-form-password-strength-status-filler"
+                  ></div>
+                  <p class="sign-up-form-password-strength-status-current"></p>
+                  <div class="sign-up-form-password-strength-status-info">
+                    <p
+                      class="
+                        sign-up-form-password-strength-status-info-uppercase
+                      "
+                    ></p>
+                    <p
+                      class="
+                        sign-up-form-password-strength-status-info-lowercase
+                      "
+                    ></p>
+                    <p
+                      class="sign-up-form-password-strength-status-info-numbers"
+                    ></p>
+                    <p
+                      class="
+                        sign-up-form-password-strength-status-info-characters
+                      "
+                    ></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="password_2" class="form-label">
-              Verification Password
-            </label>
-            <input type="password" class="form-control" id="password_2" />
-            <p class="input-error" id="passwordsCompereError"></p>
-          </div>
-          <button type="submit" class="btn btn-success" id="signup_btn">
-            Sign Up
-          </button>
-        </form>
-      </div>
-    </main>
-    <footer class="sign-in-footer">
-      <div class="container">
-        <a href="sign-in.html" class="sign-up-link" target="_top">
-          I have account
-        </a>
-      </div>
-      <p class="authError" id="authError">Error Message</p>
-    </footer>
+            <div class="mb-3">
+              <label for="password_2" class="form-label">
+                Verification Password
+              </label>
+              <input type="password" class="form-control" id="password_2" />
+              <p class="input-error" id="passwordsCompereError"></p>
+            </div>
+            <button type="submit" class="btn btn-secondary" id="signup_btn">
+              Sign Up
+            </button>
+          </form>
+        </div>
+      </main>
+      <footer class="sign-in-footer">
+        <div class="container">
+          <a href="sign-in.html" class="sign-up-link" target="_top">
+            I have account
+          </a>
+        </div>
+        <p class="authError" id="authError">Error Message</p>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
