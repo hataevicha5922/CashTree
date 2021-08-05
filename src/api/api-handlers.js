@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import axios from 'axios';
+import { routes } from '../shared/constants/routs';
 
 import { FIREBASE_CONFIG, databaseURL, authUrl } from './api-config';
 import {
@@ -7,7 +8,6 @@ import {
   showErrorAuthMessage,
 } from '../shared/error-handlers';
 import { LocalStorageService } from '../shared/ls-service';
-import { routes } from '../shared/constants/routs';
 
 require('firebase/auth');
 
@@ -59,7 +59,6 @@ export const getUser = () => {
   return axios.get(`${databaseURL}/users.json`).then((response) => {
     if (response) {
       const transformedUsers = Object.keys(response.data).map((key) => key);
-      console.log(transformedUsers);
     }
   });
 };
