@@ -19,7 +19,7 @@ import {
 } from '../../shared/error-handlers';
 
 export const singUpHandler = () => {
-  const signUpForm = document.querySelector('.sign-up-form');
+  const signUpForm = document.querySelector('.sign-up_form');
   const password_1 = document.getElementById('password_1');
   const password_2 = document.getElementById('password_2');
   const signup_btn = document.getElementById('signup_btn');
@@ -136,12 +136,20 @@ export const singUpHandler = () => {
 
   signUpForm.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    const user = {
+      firstName: userNameInput.value,
+      lastName: userSurnameInput.value,
+      email: emailInput.value,
+      password: password_1.value,
+    };
     const email = emailInput.value;
     const password = password_1.value;
-    signUp(email, password).then((response) => {
+    signUp(user).then((response) => {
       if (response) {
         preloader.style.display = 'none';
         window.location.href = routes.main_page;
+        console.log('user', response);
       } else {
         preloader.style.display = 'none';
       }
