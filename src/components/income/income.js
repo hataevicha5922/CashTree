@@ -1,4 +1,5 @@
-import { setIncome } from '../../api/api-handlers';
+import { setIncome, getIncome } from '../../api/api-handlers';
+import { routes } from '../../shared/constants/routs';
 
 export const incomeHandler = () => {
   const incomeForm = document.getElementById('income-form');
@@ -14,7 +15,10 @@ export const incomeHandler = () => {
       categories: incomeSalary.value,
       currency: incomeCurrency.value,
     };
-    // console.log(income);
-    setIncome(income);
+    setIncome(income).then((response) => {
+      if (response) {
+        window.location.href = routes.main_page;
+      }
+    });
   });
 };

@@ -2,12 +2,9 @@ import { routes, paths } from './shared/constants/routs';
 import { signInHandler } from './components/sign-in/sign-in';
 import { logoutBtnHandler } from './components/profile/profile';
 import { singUpHandler } from './components/sign-up/sign-up';
-// import {
-//   incomeHandler,
-//   expensesHandler,
-//   balanceHandler,
-// } from './components/main-page/main-page';
+import { renderIncomeSum } from './components/main-page/main-page';
 import { incomeHandler } from '../src/components/income/income';
+import { getIncome } from './api/api-handlers';
 import './styles/styles.scss';
 
 window.onload = () => {
@@ -23,14 +20,17 @@ window.onload = () => {
       break;
     case paths.main_page:
       logoutBtnHandler();
-      // incomeHandler();
-      // expensesHandler();
+      renderIncomeSum();
+      getIncome();
       break;
     case paths.sign_up:
       singUpHandler();
       break;
     case paths.income:
       incomeHandler();
+      renderIncomeSum();
+      break;
+    case paths.expenses:
       break;
     default:
       break;

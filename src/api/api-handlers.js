@@ -93,6 +93,10 @@ export const setIncome = (income) => {
   // .then((response) => console.log(response));
 };
 
+export const getIncome = () => {
+  return axios.get(`${databaseURL}/income.json`);
+};
+
 export const setIncomeRes = (sum) =>
   axios.post(`${databaseURL}/incomeSum.json`, { sum });
 

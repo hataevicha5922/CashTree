@@ -28,6 +28,10 @@ module.exports = {
       filename: 'income.html',
       template: './src/components/income/income.html',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'expenses.html',
+      template: './src/components/expenses/expenses.html',
+    }),
   ],
   module: {
     rules: [
