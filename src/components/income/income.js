@@ -1,9 +1,9 @@
-import { setIncome, getIncome } from '../../api/api-handlers';
+import { setIncome } from '../../api/api-handlers';
 import { routes } from '../../shared/constants/routs';
 
 export const incomeHandler = () => {
   const incomeForm = document.getElementById('income-form');
-  const incomeInputValue = document.getElementById('income-value');
+  const incomeInputValue = document.getElementById('income-input');
   const incomeCurrency = document.getElementById('income-currency');
   const incomeSalary = document.getElementById('income-salary');
 

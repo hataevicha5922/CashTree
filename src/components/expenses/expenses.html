@@ -13,12 +13,12 @@
     <title>Expenses</title>
   </head>
   <body>
-    <div class="page-sign-in income-page">
+    <div class="page-sign-in expenses-page">
       <header class="header">
         <div class="container">
           <div class="header-wrapper">
             <h1 class="header-title">
-              <a href="../../index.html" class="header-link income-link">
+              <a href="main-page.html" class="header-link income-link">
                 CashTree
               </a>
             </h1>
@@ -27,21 +27,21 @@
       </header>
       <main class="sign-in-main income">
         <div class="container">
-          <form class="sign-in_form income-form" id="income-form">
+          <form class="sign-in_form income-form" id="expenses-form">
             <div class="mb-3 income-wrapper">
               <input
                 type="number"
                 class="form-control income-form-input"
-                id="income-value"
+                id="expenses-input"
                 aria-describedby="emailHelp"
                 min="0"
-                placeholder="Enter Income"
+                placeholder="Enter Expenses"
               />
               <p class="input-error" id="valueError"></p>
               <select
                 class="form-select income-form-select"
                 aria-label="Default select example"
-                id="income-currency"
+                id="expenses-currency"
               >
                 <option selected>BYN</option>
                 <option value="USD">USD</option>
@@ -52,14 +52,14 @@
               <select
                 class="form-select income-form-select-salary"
                 aria-label="Default select example"
-                id="income-salary"
+                id="expenses-categories"
               >
                 <option selected>Salary</option>
                 <option value="Spin-off">Spin-off</option>
               </select>
             </div>
             <div class="income-btns">
-              <button id="incomeBtn" type="submit" class="btn btn-secondary">
+              <button id="expensesBtn" type="submit" class="btn btn-secondary">
                 Add Expenses
               </button>
             </div>

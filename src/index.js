@@ -1,9 +1,13 @@
-import { routes, paths } from './shared/constants/routs';
+import { paths } from './shared/constants/routs';
 import { signInHandler } from './components/sign-in/sign-in';
 import { logoutBtnHandler } from './components/profile/profile';
 import { singUpHandler } from './components/sign-up/sign-up';
-import { renderIncomeSum } from './components/main-page/main-page';
+import {
+  renderIncomeSum,
+  renderExpensesSum,
+} from './components/main-page/main-page';
 import { incomeHandler } from '../src/components/income/income';
+import { expensesHandler } from '../src/components/expenses/expenses';
 import { getIncome } from './api/api-handlers';
 import './styles/styles.scss';
 
@@ -21,6 +25,7 @@ window.onload = () => {
     case paths.main_page:
       logoutBtnHandler();
       renderIncomeSum();
+      renderExpensesSum();
       getIncome();
       break;
     case paths.sign_up:
@@ -31,6 +36,7 @@ window.onload = () => {
       renderIncomeSum();
       break;
     case paths.expenses:
+      expensesHandler();
       break;
     default:
       break;

@@ -1,4 +1,4 @@
-import { getIncome } from '../../api/api-handlers';
+import { getExpenses, getIncome } from '../../api/api-handlers';
 
 export const renderIncomeSum = async () => {
   const incomeContainer = document.getElementById('income-value');
@@ -12,7 +12,21 @@ export const renderIncomeSum = async () => {
       ))
   );
   incomeContainer.innerText = `+ ${result} BYN`;
-  console.log(result);
 };
 
 renderIncomeSum();
+
+export const renderExpensesSum = async () => {
+  const expensesContainer = document.getElementById('expenses-value');
+  let res;
+
+  await getExpenses().then((response) => {
+    res = Object.values(response.data).reduce(
+      (sum, current) => sum + Number(current.valueExpenses),
+      0
+    );
+  });
+  expensesContainer.innerText = `- ${res} BYN`;
+};
+
+renderExpensesSum();

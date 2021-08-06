@@ -90,7 +90,6 @@ export const setIncome = (income) => {
     currency,
     date: moment().format(),
   });
-  // .then((response) => console.log(response));
 };
 
 export const getIncome = () => {
@@ -99,5 +98,20 @@ export const getIncome = () => {
 
 export const setIncomeRes = (sum) =>
   axios.post(`${databaseURL}/incomeSum.json`, { sum });
+
+export const setExpensesRes = (expenses) => {
+  const { valueExpenses, categoriesExpenses, currencyExpenses } = expenses;
+
+  return axios.post(`${databaseURL}/expenses.json`, {
+    valueExpenses,
+    categoriesExpenses,
+    currencyExpenses,
+    date: moment().format(),
+  });
+};
+
+export const getExpenses = () => {
+  return axios.get(`${databaseURL}/expenses.json`);
+};
 
 initApi();
