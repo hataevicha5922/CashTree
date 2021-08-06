@@ -3,6 +3,8 @@ export const routes = {
   sign_in: 'sign-in.html',
   sign_up: 'sign-up.html',
   main_page: 'main-page.html',
+  income: 'income.html',
+  expenses: 'expenses.html',
 };
 
 export const paths = {
@@ -10,4 +12,6 @@ export const paths = {
   sign_in: '/sign-in.html',
   sign_up: '/sign-up.html',
   main_page: '/main-page.html',
+  income: '/income.html',
+  expenses: '/expenses.html',
 };
