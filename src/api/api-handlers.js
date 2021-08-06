@@ -8,6 +8,7 @@ import {
   showErrorAuthMessage,
 } from '../shared/error-handlers';
 import { LocalStorageService } from '../shared/ls-service';
+import moment from 'moment';
 
 require('firebase/auth');
 
@@ -55,6 +56,7 @@ export const createUser = (user) => {
     uuid: LocalStorageService.getUID(),
   });
 };
+
 export const getUser = () => {
   return axios.get(`${databaseURL}/users.json`).then((response) => {
     if (response) {
@@ -62,6 +64,7 @@ export const getUser = () => {
     }
   });
 };
+
 export const getUserById = (id) => axios.get(`${databaseURL}/users/${id}.json`);
 
 export const signUp = async (user) => {
@@ -77,5 +80,20 @@ export const signUp = async (user) => {
     showErrorNotification(error);
   }
 };
+
+export const setIncome = (income) => {
+  const { valueIncome, categories, currency } = income;
+
+  return axios.post(`${databaseURL}/income.json`, {
+    valueIncome,
+    categories,
+    currency,
+    date: moment().format(),
+  });
+  // .then((response) => console.log(response));
+};
+
+export const setIncomeRes = (sum) =>
+  axios.post(`${databaseURL}/incomeSum.json`, { sum });
 
 initApi();

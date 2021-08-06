@@ -24,6 +24,10 @@ module.exports = {
       filename: 'main-page.html',
       template: './src/components/main-page/main-page.html',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'income.html',
+      template: './src/components/income/income.html',
+    }),
   ],
   module: {
     rules: [

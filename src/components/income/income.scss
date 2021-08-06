@@ -1,0 +1,41 @@
+.income-page {
+  height: 100vh;
+  background-image: url('../images/income1.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100% 100%;
+
+  .income {
+    padding: 70px;
+    &-form {
+      background: rgba(245, 241, 241, 0.1) !important;
+      margin-top: 50px;
+
+      .income-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .income-form-input {
+          border: 1px solid;
+          margin-right: 20px;
+        }
+
+        .income-form-select {
+          border: 1px solid;
+          width: 50%;
+        }
+      }
+
+      .income-form-select-salary {
+        border: 1px solid;
+      }
+
+      .income-btns {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
