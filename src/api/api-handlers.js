@@ -60,12 +60,31 @@ export const createUser = (user) => {
 export const getUser = () => {
   return axios.get(`${databaseURL}/users.json`).then((response) => {
     if (response) {
-      const transformedUsers = Object.keys(response.data).map((key) => key);
+      const transformedUsers = Object.keys(response.data).map((key) => ({
+        ...response.data[key],
+        id: key,
+      }));
+      const user = transformedUsers.find(
+        (user) => user.uuid === LocalStorageService.getUID()
+      );
+      LocalStorageService.setPersonalData(user);
     }
   });
 };
 
 export const getUserById = (id) => axios.get(`${databaseURL}/users/${id}.json`);
+
+export const getUsers = () => {
+  return axios.get(`${databaseURL}/users.json`).then((response) => {
+    if (response) {
+      return Object.keys(response.data).map((key) => ({
+        ...response.data[key],
+        id: key,
+      }));
+    }
+  });
+  // .then((result) => console.log('result:', result));
+};
 
 export const signUp = async (user) => {
   const { password, email } = user;
@@ -82,18 +101,27 @@ export const signUp = async (user) => {
 };
 
 export const setIncome = (income) => {
-  const { valueIncome, categories, currency } = income;
+  const { userId, valueIncome, categories, currency, date } = income;
 
   return axios.post(`${databaseURL}/income.json`, {
     valueIncome,
     categories,
     currency,
-    date: moment().format(),
+    date,
+    userId,
   });
 };
 
 export const getIncome = () => {
   return axios.get(`${databaseURL}/income.json`);
+  // .then((result) => {
+  //   const transformedIncomesArray = Object.keys(result).map((key) => ({
+  //     ...result[key],
+  //     id: key,
+  //   }));
+  //   return transformedIncomesArray;
+  // })
+  // .catch((error) => console.log(error));
 };
 
 export const setIncomeRes = (sum) =>

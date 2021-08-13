@@ -4,4 +4,5 @@ export const ERROR_MESSAGES = {
   passwordsComparer: 'The passwords must be the same',
   userName: 'Incorrect name value',
   userSurnameError: 'Incorrect surname value',
+  incomeValueError: 'Incorrect income value',
 };

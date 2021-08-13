@@ -8,6 +8,9 @@ export const emailLengthValidator = (email) => email.match(REGEXP.EMAIL);
 
 export const nameValidator = (userName) => userName.match(REGEXP.NAME);
 
+export const incomeValidator = (incomeValue) =>
+  incomeValue.match(REGEXP.INCOME);
+
 const validation_status = document.querySelector(
   '.sign-up-form-password-strength-status-current'
 );
@@ -61,8 +64,6 @@ const eightCharactersCheck = (password) => {
 };
 
 export const passwordStrengthController = (password) => {
-  let passwordStrength;
-
   const passwordStrengthNum =
     lowerCaseCheck(password) +
     upperCaseCheck(password) +

@@ -26,6 +26,10 @@
           border: 1px solid;
           width: 50%;
         }
+        #incomeValueError {
+          position: absolute;
+          bottom: -40px !important;
+        }
       }
 
       .income-form-select-salary {

@@ -8,7 +8,8 @@ import {
 } from './components/main-page/main-page';
 import { incomeHandler } from '../src/components/income/income';
 import { expensesHandler } from '../src/components/expenses/expenses';
-import { getIncome } from './api/api-handlers';
+import { getIncome, getUser } from './api/api-handlers';
+import { renderIncome } from './components/income-handler/income-handler';
 import './styles/styles.scss';
 
 window.onload = () => {
@@ -27,6 +28,7 @@ window.onload = () => {
       renderIncomeSum();
       renderExpensesSum();
       getIncome();
+      getUser();
       break;
     case paths.sign_up:
       singUpHandler();
@@ -37,6 +39,9 @@ window.onload = () => {
       break;
     case paths.expenses:
       expensesHandler();
+      break;
+    case paths.income_handler:
+      renderIncome();
       break;
     default:
       break;

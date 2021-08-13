@@ -66,6 +66,17 @@ export const hidePasswordsComparerError = () => {
   errorTag.style.display = 'none';
 };
 
+export const showIncomeValueError = () => {
+  const errorTag = document.getElementById('incomeValueError');
+  errorTag.style.display = 'block';
+  errorTag.innerText = ERROR_MESSAGES.incomeValueError;
+};
+
+export const hideIncomeValueError = () => {
+  const errorTag = document.getElementById('incomeValueError');
+  errorTag.style.display = 'none';
+};
+
 export const showErrorAuthMessage = (err) => {
   const authError = document.getElementById('authError');
   authError.style.display = 'block';
