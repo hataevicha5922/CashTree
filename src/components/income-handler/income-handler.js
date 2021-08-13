@@ -24,14 +24,12 @@ export const renderIncome = async () => {
 
   await getUsers().then((response) => {
     users = response;
-    console.log('users', users);
   });
 
   const userId = LocalStorageService.getPersonalData().id;
 
   incomes.forEach((income) => {
     const user = users.find((item) => item.id === userId);
-    console.log(income);
     const incomeBlock = document.createElement('div');
     const title = document.createElement('h5');
     const value = document.createElement('p');

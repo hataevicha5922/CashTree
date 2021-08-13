@@ -6,6 +6,7 @@ import {
   showIncomeValueError,
   hideIncomeValueError,
 } from '../../shared/error-handlers';
+import { incomeValidator } from '../../shared/validators';
 
 export const incomeHandler = () => {
   const incomeForm = document.getElementById('income-form');
@@ -16,6 +17,16 @@ export const incomeHandler = () => {
   const incomeBtn = document.getElementById('incomeBtn');
 
   incomeBtn.setAttribute('disabled', true);
+
+  incomeInputValue.oninput = () => {
+    if (incomeValidator(incomeInputValue.value)) {
+      hideIncomeValueError();
+      incomeBtn.removeAttribute('disabled');
+    } else {
+      showIncomeValueError();
+      incomeBtn.setAttribute('disabled', true);
+    }
+  };
 
   const income = {
     userId: LocalStorageService.getPersonalData().id,
