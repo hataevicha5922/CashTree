@@ -5,6 +5,7 @@ export const routes = {
   main_page: 'main-page.html',
   income: 'income.html',
   expenses: 'expenses.html',
+  income_handler: 'income-handler.html',
 };
 
 export const paths = {
@@ -14,4 +15,5 @@ export const paths = {
   main_page: '/main-page.html',
   income: '/income.html',
   expenses: '/expenses.html',
+  income_handler: '/income-handler.html',
 };

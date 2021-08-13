@@ -1,0 +1,39 @@
+@import '../../styles/colors.scss';
+
+.income-history {
+  background: linear-gradient(#58b6b9, #edf1cf);
+
+  a {
+    color: $mainColor;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    opacity: 0.7;
+  }
+
+  a:hover {
+    border-bottom: 1px solid;
+  }
+
+  .income-container {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .income-wrapper {
+      width: 50%;
+      border: 1px solid;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      margin-bottom: 20px;
+      padding: 10px;
+      text-align: center;
+      background: linear-gradient(45deg, #fff1eb, #ace0f9);
+
+      .income-user-name {
+        margin-right: 20px;
+      }
+    }
+  }
+}
