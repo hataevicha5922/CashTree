@@ -36,6 +36,10 @@ module.exports = {
       filename: 'income-handler.html',
       template: './src/components/income-handler/income-handler.html',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'expenses-handler.html',
+      template: './src/components/expenses-handler/expenses-handler.html',
+    }),
   ],
   module: {
     rules: [

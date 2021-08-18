@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import axios from 'axios';
 import { routes } from '../shared/constants/routs';
+import { v4 as uuidv4 } from 'uuid';
 
 import { FIREBASE_CONFIG, databaseURL, authUrl } from './api-config';
 import {
@@ -109,19 +110,16 @@ export const setIncome = (income) => {
     currency,
     date,
     userId,
+    incomeId: uuidv4(),
   });
 };
 
 export const getIncome = () => {
   return axios.get(`${databaseURL}/income.json`);
-  // .then((result) => {
-  //   const transformedIncomesArray = Object.keys(result).map((key) => ({
-  //     ...result[key],
-  //     id: key,
-  //   }));
-  //   return transformedIncomesArray;
-  // })
-  // .catch((error) => console.log(error));
+};
+
+export const deleteIncome = () => {
+  return axios.delete(`${databaseURL}/income.json`);
 };
 
 export const setIncomeRes = (sum) =>
