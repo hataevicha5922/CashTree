@@ -6,6 +6,7 @@ export const routes = {
   income: 'income.html',
   expenses: 'expenses.html',
   income_handler: 'income-handler.html',
+  expenses_handler: 'expenses-handler.html',
 };
 
 export const paths = {
@@ -16,4 +17,5 @@ export const paths = {
   income: '/income.html',
   expenses: '/expenses.html',
   income_handler: '/income-handler.html',
+  expenses_handler: '/expenses-handler.html',
 };

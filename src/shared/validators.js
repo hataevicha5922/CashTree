@@ -70,6 +70,8 @@ export const passwordStrengthController = (password) => {
     numberCheck(password) +
     eightCharactersCheck(password);
 
+  let passwordStrength;
+
   Object.keys(PASSWORD_STRENGTHS).forEach((item) => {
     if (PASSWORD_STRENGTHS[item] === passwordStrengthNum) {
       passwordStrength = item;

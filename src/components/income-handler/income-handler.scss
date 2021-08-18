@@ -15,24 +15,94 @@
     border-bottom: 1px solid;
   }
 
-  .income-container {
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .header {
+    padding: 20px;
 
-    .income-wrapper {
-      width: 50%;
-      border: 1px solid;
-      border-radius: 10px;
-      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-      margin-bottom: 20px;
-      padding: 10px;
-      text-align: center;
-      background: linear-gradient(45deg, #fff1eb, #ace0f9);
+    .container {
+      .header-wrapper-income-history {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
 
-      .income-user-name {
+        .header-wrapper-links {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          width: 30%;
+        }
+      }
+    }
+  }
+  .income-sum {
+    width: 100vh;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .income-handler {
+    height: 100vh;
+
+    .income-container {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .income-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-around;
+        width: 50%;
+        border: 1px solid;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(45deg, #ace0f9, #fff1eb);
+      }
+
+      .income-info {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .income-value {
+        margin: 0;
+        padding: 0;
+      }
+
+      .income-btns {
+        width: 100%;
+        text-align: end;
+      }
+      .change-button {
+        width: 20px;
+        height: 20px;
         margin-right: 20px;
+        border-radius: 50%;
+        border: none;
+        background-image: url('../images/pan.jpg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 100% 100%;
+      }
+
+      .delete-button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background-image: url('../images/delete_1.jpg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 100% 100%;
       }
     }
   }
