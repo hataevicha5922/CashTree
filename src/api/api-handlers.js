@@ -84,7 +84,6 @@ export const getUsers = () => {
       }));
     }
   });
-  // .then((result) => console.log('result:', result));
 };
 
 export const signUp = async (user) => {
@@ -125,14 +124,16 @@ export const deleteIncome = () => {
 export const setIncomeRes = (sum) =>
   axios.post(`${databaseURL}/incomeSum.json`, { sum });
 
-export const setExpensesRes = (expenses) => {
-  const { valueExpenses, categoriesExpenses, currencyExpenses } = expenses;
+export const setExpenses = (expenses) => {
+  const { valueExpenses, categoriesExpenses, currencyExpenses, userId, date } =
+    expenses;
 
   return axios.post(`${databaseURL}/expenses.json`, {
     valueExpenses,
     categoriesExpenses,
     currencyExpenses,
-    date: moment().format(),
+    date,
+    userId,
   });
 };
 

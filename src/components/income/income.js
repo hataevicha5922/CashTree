@@ -15,6 +15,11 @@ export const incomeHandler = () => {
   // const incomeCurrency = document.getElementById('income-currency');
   const incomeSalary = document.getElementById('income-salary');
   const incomeBtn = document.getElementById('incomeBtn');
+  const userName = document.getElementById('header-links-info');
+
+  userName.innerText = userName.innerText = `${
+    LocalStorageService.getPersonalData().firstName
+  } ${LocalStorageService.getPersonalData().lastName}`;
 
   incomeBtn.setAttribute('disabled', true);
 

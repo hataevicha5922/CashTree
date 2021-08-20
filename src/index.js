@@ -8,7 +8,7 @@ import { getIncome, getUser } from './api/api-handlers';
 import { renderIncome } from './components/income-handler/income-handler';
 import './styles/styles.scss';
 import { renderDate } from './components/main-page/main-page';
-// import { showUserName } from './shared/constants/data-handlers';
+import { renderExpenses } from './components/expenses-handler/expenses-handler';
 
 window.onload = () => {
   const pathname = Object.values(paths).find(
@@ -32,14 +32,19 @@ window.onload = () => {
       break;
     case paths.income:
       incomeHandler();
+      logoutBtnHandler();
       break;
     case paths.expenses:
       expensesHandler();
+      logoutBtnHandler();
       break;
     case paths.income_handler:
       renderIncome();
+      logoutBtnHandler();
       break;
     case paths.expenses_handler:
+      renderExpenses();
+      logoutBtnHandler();
       break;
     default:
       break;
