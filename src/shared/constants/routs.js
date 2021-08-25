@@ -7,6 +7,7 @@ export const routes = {
   expenses: 'expenses.html',
   income_handler: 'income-handler.html',
   expenses_handler: 'expenses-handler.html',
+  income_statistics: 'income-statistics.html',
 };
 
 export const paths = {
@@ -18,4 +19,5 @@ export const paths = {
   expenses: '/expenses.html',
   income_handler: '/income-handler.html',
   expenses_handler: '/expenses-handler.html',
+  income_statistics: '/income-statistics.html',
 };

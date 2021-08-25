@@ -149,7 +149,6 @@ export const singUpHandler = () => {
       if (response) {
         preloader.style.display = 'none';
         window.location.href = routes.main_page;
-        console.log('user', response);
       } else {
         preloader.style.display = 'none';
       }

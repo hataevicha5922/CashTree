@@ -117,8 +117,8 @@ export const getIncome = () => {
   return axios.get(`${databaseURL}/income.json`);
 };
 
-export const deleteIncome = () => {
-  return axios.delete(`${databaseURL}/income.json`);
+export const deleteIncome = (id) => {
+  return axios.delete(`${databaseURL}/income/${id}.json`);
 };
 
 export const setIncomeRes = (sum) =>

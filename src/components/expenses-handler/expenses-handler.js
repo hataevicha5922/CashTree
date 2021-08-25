@@ -26,6 +26,7 @@ export const renderExpenses = async () => {
   );
 
   expensesArr.forEach((expense) => {
+    const expenseCard = document.createElement('div');
     const incomeWrapper = document.createElement('div');
     const incomeBlock = document.createElement('div');
     const title = document.createElement('h5');
@@ -33,24 +34,26 @@ export const renderExpenses = async () => {
     const userName = document.createElement('span');
     const incomeDate = document.createElement('span');
     const buttonWrapper = document.createElement('div');
-    const buttonChange = document.createElement('button');
+    // const buttonChange = document.createElement('button');
     const buttonDelete = document.createElement('button');
 
+    expenseCard.className = 'income-card';
     incomeWrapper.className = 'income-wrapper';
     incomeBlock.className = 'income-info';
     userName.className = 'income-user-name';
     value.className = 'income-value';
     buttonWrapper.className = 'income-btns';
-    buttonChange.className = 'change-button';
+    // buttonChange.className = 'change-button';
     buttonDelete.className = 'delete-button';
 
     title.innerHTML = expense.categoriesExpenses;
     value.innerHTML = `${expense.valueExpenses} BYN`;
     incomeDate.innerHTML = moment(expense.date).format('MMM Do YY');
     incomeBlock.append(title, value, userName, incomeDate);
-    buttonWrapper.append(buttonChange, buttonDelete);
-    incomeWrapper.append(incomeBlock, buttonWrapper);
-    expensesContainer.append(incomeWrapper);
+    buttonWrapper.append(buttonDelete);
+    incomeWrapper.append(incomeBlock);
+    expenseCard.append(incomeWrapper, buttonWrapper);
+    expensesContainer.append(expenseCard);
   });
 
   expensesResult = expensesArr.reduce((res, expense) => {

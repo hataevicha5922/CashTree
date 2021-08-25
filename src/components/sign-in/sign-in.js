@@ -17,6 +17,7 @@ export const signInHandler = () => {
   const signInBtn = document.getElementById('signInBtn');
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
+  const preloader = document.getElementById('preloader');
 
   const formFields = {
     email: {
@@ -28,6 +29,9 @@ export const signInHandler = () => {
   };
 
   signInBtn.setAttribute('disabled', true);
+  signInBtn.addEventListener('click', () => {
+    preloader.style.display = 'block';
+  });
 
   signInForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -37,7 +41,10 @@ export const signInHandler = () => {
       if (response) {
         const { idToken: token } = response.data;
         setToken(token);
+        preloader.style.display = 'none';
         window.location.href = routes.main_page;
+      } else {
+        preloader.style.display = 'none';
       }
     });
   });

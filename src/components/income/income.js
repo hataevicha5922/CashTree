@@ -16,12 +16,16 @@ export const incomeHandler = () => {
   const incomeSalary = document.getElementById('income-salary');
   const incomeBtn = document.getElementById('incomeBtn');
   const userName = document.getElementById('header-links-info');
+  const preloader = document.getElementById('preloader');
 
   userName.innerText = userName.innerText = `${
     LocalStorageService.getPersonalData().firstName
   } ${LocalStorageService.getPersonalData().lastName}`;
 
   incomeBtn.setAttribute('disabled', true);
+  incomeBtn.addEventListener('onclick', () => {
+    preloader.style.display = 'block';
+  });
 
   incomeInputValue.oninput = () => {
     if (incomeValidator(incomeInputValue.value)) {
@@ -49,8 +53,11 @@ export const incomeHandler = () => {
 
     setIncome(income).then((response) => {
       if (response) {
-        window.location.href = routes.income_handler;
+        preloader.style.display = 'none';
+        window.location.href = routes.main_page;
       }
+      preloader.style.display = 'none';
     });
+    // .catch(error = );
   });
 };
