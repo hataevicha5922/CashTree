@@ -40,6 +40,14 @@ module.exports = {
       filename: 'expenses-handler.html',
       template: './src/components/expenses-handler/expenses-handler.html',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'income-statistics.html',
+      template: './src/components/income-statistics/income-statistics.html',
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'expenses-statistics.html',
+      template: './src/components/expenses-statistics/expenses-statistics.html',
+    }),
   ],
   module: {
     rules: [

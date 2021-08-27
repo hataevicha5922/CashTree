@@ -13,6 +13,13 @@
     <title>Expenses</title>
   </head>
   <body>
+    <div id="preloader" class="preloader preloader-done">
+      <div class="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
+      </div>
+    </div>
     <div class="page-sign-in expenses-page">
       <header class="header">
         <div class="container">
@@ -38,15 +45,10 @@
                 aria-describedby="emailHelp"
                 min="0"
                 placeholder="Enter Expenses"
+                step="0.01"
               />
-              <p class="input-error" id="valueError"></p>
-              <select
-                class="form-select income-form-select"
-                aria-label="Default select example"
-                id="expenses-currency"
-              >
-                <option selected>BYN</option>
-              </select>
+              <p class="input-error" id="expensesValueError">Error</p>
+              <input type="text" placeholder="BYN"   class="form-control income-form-input currency">
             </div>
             <div class="mb-3">
               <select
@@ -58,10 +60,10 @@
                 <option value="Transport">Transport</option>
                 <option value="Medicines">Medicines</option>
                 <option value="Education">Education</option>
-                <option value="Clothes and shoes">Clothes and shoes</option>
+                <option value="Clothes">Clothes</option>
                 <option value="Debentures">Debentures</option>
                 <option value="Rent">Rent</option>
-                <option value="Other payments">Other payments</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="income-btns">

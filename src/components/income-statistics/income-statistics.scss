@@ -1,0 +1,44 @@
+.income-statistics {
+  height: 100vh;
+  background-image: url('../images/white-boards-as-background.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100% 100%;
+
+  .header-wrapper-income-history {
+    padding: 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .header-wrapper-links {
+      width: 40%;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    a {
+      color: $mainColor;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 30px;
+      opacity: 0.7;
+    }
+
+    a:hover {
+      border-bottom: 1px solid;
+    }
+  }
+
+  .chart {
+    display: flex;
+    justify-content: center;
+  }
+
+  rect {
+    opacity: 0.3;
+    border: 1px solid black;
+    border-radius: 15px;
+  }
+}

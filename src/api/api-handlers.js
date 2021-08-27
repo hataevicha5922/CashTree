@@ -117,8 +117,8 @@ export const getIncome = () => {
   return axios.get(`${databaseURL}/income.json`);
 };
 
-export const deleteIncome = () => {
-  return axios.delete(`${databaseURL}/income.json`);
+export const deleteIncome = (id) => {
+  return axios.delete(`${databaseURL}/income/${id}.json`);
 };
 
 export const setIncomeRes = (sum) =>
@@ -139,6 +139,10 @@ export const setExpenses = (expenses) => {
 
 export const getExpenses = () => {
   return axios.get(`${databaseURL}/expenses.json`);
+};
+
+export const deleteExpenses = (id) => {
+  return axios.delete(`${databaseURL}/expenses/${id}.json`);
 };
 
 initApi();

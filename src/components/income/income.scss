@@ -56,6 +56,12 @@
           border: 1px solid;
           width: 50%;
         }
+
+        .currency {
+          width: 30%;
+          margin-right: 0;
+        }
+
         #incomeValueError {
           position: absolute;
           bottom: -40px !important;

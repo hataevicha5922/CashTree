@@ -77,6 +77,17 @@ export const hideIncomeValueError = () => {
   errorTag.style.display = 'none';
 };
 
+export const showExpensesValueError = () => {
+  const errorTag = document.getElementById('expensesValueError');
+  errorTag.style.display = 'block';
+  errorTag.innerText = ERROR_MESSAGES.incomeValueError;
+};
+
+export const hideExpensesValueError = () => {
+  const errorTag = document.getElementById('expensesValueError');
+  errorTag.style.display = 'none';
+};
+
 export const showErrorAuthMessage = (err) => {
   const authError = document.getElementById('authError');
   authError.style.display = 'block';
