@@ -51,6 +51,16 @@
           margin-right: 20px;
         }
 
+        .currency {
+          width: 30%;
+          margin-right: 0;
+        }
+
+        #expensesValueError {
+          position: absolute;
+          bottom: -40px !important;
+        }
+
         .income-form-select {
           border: 1px solid;
           width: 50%;

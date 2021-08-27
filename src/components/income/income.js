@@ -11,8 +11,6 @@ import { incomeValidator } from '../../shared/validators';
 export const incomeHandler = () => {
   const incomeForm = document.getElementById('income-form');
   const incomeInputValue = document.getElementById('income-input');
-  // comments will be removed after adding functionality
-  // const incomeCurrency = document.getElementById('income-currency');
   const incomeSalary = document.getElementById('income-salary');
   const incomeBtn = document.getElementById('incomeBtn');
   const userName = document.getElementById('header-links-info');
@@ -42,8 +40,6 @@ export const incomeHandler = () => {
     date: moment().format(),
     valueIncome: null,
     categories: null,
-    // comments will be removed after adding functionality
-    // currency: incomeCurrency.value,
   };
 
   incomeForm.addEventListener('submit', (event) => {

@@ -23,13 +23,9 @@ export const showBalance = async () => {
     income.userId === userId ? incomeUser.push(income) : false
   );
 
-  console.log(incomeUser);
-
   let resIncome = incomeUser.reduce((result, item) => {
     return +result + +item.valueIncome;
   }, 0);
-
-  console.log(resIncome);
 
   await getExpenses().then((response) => {
     const transformedExpensesArray = Object.keys(response).map((key) => ({

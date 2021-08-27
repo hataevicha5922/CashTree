@@ -8,11 +8,8 @@ import { renderIncome } from './components/income-handler/income-handler';
 import './styles/styles.scss';
 import { renderDate, showBalance } from './components/main-page/main-page';
 import { renderExpenses } from './components/expenses-handler/expenses-handler';
-import {
-  drawChart,
-  counterSalary,
-  salaryChart,
-} from './components/income-statistics/income-statistics';
+import { counterSalary } from './components/income-statistics/income-statistics';
+import { counterExpenses } from './components/expenses-statistics/expenses-statistics';
 
 window.onload = () => {
   const pathname = Object.values(paths).find(
@@ -50,8 +47,12 @@ window.onload = () => {
       logoutBtnHandler();
       break;
     case paths.income_statistics:
-      // counterSalary();
-      // drawChart();
+      counterSalary();
+      logoutBtnHandler();
+      break;
+    case paths.expenses_statistics:
+      counterExpenses();
+      logoutBtnHandler();
       break;
     default:
       break;

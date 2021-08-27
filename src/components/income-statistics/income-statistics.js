@@ -1,63 +1,66 @@
-// import { getIncome, deleteIncome } from '../../api/api-handlers';
-// import { LocalStorageService } from '../../shared/ls-service';
+import { getIncome } from '../../api/api-handlers';
+import { LocalStorageService } from '../../shared/ls-service';
 
-// export const drawChart = (salary = 100, spinOff = 20) => {
-//   let data = google.visualization.arrayToDataTable([
-//     ['Task', 'Hours per Day'],
-//     ['Salary', salary],
-//     ['Spin-off', spinOff],
-//   ]);
+const userNameTag = document.getElementById('header-links-info');
 
-//   let options = {
-//     title: 'My Income',
-//     pieHole: 0.4,
-//   };
+export const counterSalary = async () => {
+  const userId = LocalStorageService.getPersonalData().id;
 
-//   let chart = new google.visualization.PieChart(
-//     document.getElementById('donutchart')
-//   );
-//   chart.draw(data, options);
-// };
+  userNameTag.innerText = `${LocalStorageService.getPersonalData().firstName} ${
+    LocalStorageService.getPersonalData().lastName
+  }`;
 
-// google.charts.load('current', { packages: ['corechart'] });
-// google.charts.setOnLoadCallback(drawChart);
+  let incomes;
 
-// export const counterSalary = async () => {
-//   const userId = LocalStorageService.getPersonalData().id;
+  await getIncome()
+    .then((result) => {
+      const transformedIncomesArray = Object.keys(result).map((key) => ({
+        ...result[key],
+      }));
+      incomes = transformedIncomesArray[0];
+    })
+    .catch((error) => console.log(error));
 
-//   let incomes;
+  let incomeUser = [];
+  Object.values(incomes).map((income) =>
+    income.userId === userId ? incomeUser.push(income) : false
+  );
 
-//   await getIncome()
-//     .then((result) => {
-//       const transformedIncomesArray = Object.keys(result).map((key) => ({
-//         ...result[key],
-//       }));
-//       incomes = transformedIncomesArray[0];
-//     })
-//     .catch((error) => console.log(error));
+  const salaryValues = [];
+  incomeUser.map((item) => {
+    item.categories === 'Salary' ? salaryValues.push(item) : false;
+  });
 
-//   let incomeUser = [];
-//   Object.values(incomes).map((income) =>
-//     income.userId === userId ? incomeUser.push(income) : false
-//   );
+  let salary = salaryValues.reduce((res, item) => {
+    return +res + +item.valueIncome;
+  }, 0);
 
-//   const salaryValues = [];
-//   incomeUser.map((item) => {
-//     item.categories === 'Salary' ? salaryValues.push(item) : false;
-//   });
+  const spinOffValues = [];
+  incomeUser.map((item) => {
+    item.categories === 'Spin-off' ? spinOffValues.push(item) : false;
+  });
 
-//   let salary = salaryValues.reduce((res, item) => {
-//     return +res + +item.valueIncome;
-//   }, 0);
+  let spinOff = spinOffValues.reduce((res, item) => {
+    return +res + +item.valueIncome;
+  }, 0);
 
-//   const spinOffValues = [];
-//   incomeUser.map((item) => {
-//     item.categories === 'Spin-off' ? spinOffValues.push(item) : false;
-//   });
+  google.charts.load('current', { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Salary', salary],
+      ['Spin-Off', spinOff],
+    ]);
 
-//   let spinOff = spinOffValues.reduce((res, item) => {
-//     return +res + +item.valueIncome;
-//   }, 0);
+    var options = {
+      title: 'My Income',
+      pieHole: 0.4,
+    };
 
-//   drawChart(salary, spinOff);
-// };
+    var chart = new google.visualization.PieChart(
+      document.getElementById('donutchart')
+    );
+    chart.draw(data, options);
+  }
+};

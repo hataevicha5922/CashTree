@@ -1,6 +1,7 @@
 import moment from 'moment';
 import { getIncome, deleteIncome } from '../../api/api-handlers';
 import { LocalStorageService } from '../../shared/ls-service';
+import { routes } from '../../shared/constants/routs';
 
 const userNameTag = document.getElementById('header-links-info');
 const incomeSum = document.querySelector('.income-sum');
@@ -55,6 +56,8 @@ export const renderIncome = async () => {
     // buttonChange.className = 'change-button';
     buttonDelete.className = 'delete-button';
 
+    buttonDelete.setAttribute('data-bs-toggle', 'modal');
+    buttonDelete.setAttribute('data-bs-target', '#staticBackdrop');
     title.innerHTML = income.categories;
     value.innerHTML = `${income.valueIncome} BYN`;
     incomeDate.innerHTML = moment(income.date).format('MMM Do YY');
@@ -66,12 +69,17 @@ export const renderIncome = async () => {
 
     buttonDelete.onclick = (event) => {
       event.preventDefault();
-      deleteIncome(income.id);
-      console.log(income.id);
+      const incValue = document.querySelector('.inc-value');
+      incValue.innerText = `${income.categories}: ${
+        income.valueIncome
+      } BYN ${moment(income.date).format('MMM Do YY')} ?`;
+      const deleteValue = document.getElementById('delete-value');
+      deleteValue.onclick = async () => {
+        await deleteIncome(income.id);
+        window.location.href = routes.main_page;
+      };
     };
   });
-
-  console.log('incomes:', incomeUser);
 
   let result = incomeUser.reduce((res, item) => {
     return +res + +item.valueIncome;

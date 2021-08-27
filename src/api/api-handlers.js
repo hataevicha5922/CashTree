@@ -141,4 +141,8 @@ export const getExpenses = () => {
   return axios.get(`${databaseURL}/expenses.json`);
 };
 
+export const deleteExpenses = (id) => {
+  return axios.delete(`${databaseURL}/expenses/${id}.json`);
+};
+
 initApi();
