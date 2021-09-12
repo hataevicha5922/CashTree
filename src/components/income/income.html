@@ -24,19 +24,30 @@
       <header class="header">
         <div class="container">
           <div class="header-wrapper-income-history">
-            <h1 class="header-title"><a href="main-page.html" class="">CashTree</a></h1>
+            <div class="dropdown">
+              <h1 class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">CashTree</h1>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="main-page.html">Main page</a></li>
+                <li><a class="dropdown-item" href="income-handler.html">Show Income</a></li>
+                <li><a class="dropdown-item" href="expenses.html" >  Add Expenses</a></li>
+                <li><a class="dropdown-item" href="income-handler.html">Show Expenses</a></li>
+                <li><a class="dropdown-item" href="income-statistics.html">Income Statistics</a></li>
+                <li><a class="dropdown-item" href="expenses-statistics.html"> Expenses Statistics</a></li>
+              </ul>
+            </div>
             <div class="header-wrapper-links">
-             <p class="header-links-info" id="header-links-info">Hataevicha5922@gmail.com</p>
-             <div class="header-links-link">
+              <p class="header-links-info" id="header-links-info"></p>
+              <p class="header-links-info header-links-info-balance" id="header-links-balance">Bal</p>
+              <div class="header-links-link">
                 <button type="button" class="btn btn-secondary" id="logoutBtn">Log Out</button>
+              </div>
             </div>
           </div>
-        </div>
       </header>
       <main class="sign-in-main income">
         <div class="container">
           <h2 class="income-title">Income</h2>
-         <form class="sign-in_form income-form" id="income-form">
+          <form class="sign-in_form income-form" id="income-form">
             <div class="mb-3 income-wrapper">
               <input
                 type="number"
@@ -48,19 +59,17 @@
                 step="0.01"
               />
               <p class="input-error" id="incomeValueError">Error</p>
-              
               <input type="text" placeholder="BYN"   class="form-control income-form-input currency">
               </select>
             </div>
-
             <div class="mb-3">
               <select
                 class="form-select income-form-select-salary"
                 aria-label="Default select example"
                 id="income-salary"
               >
-                <option selected>Salary</option>
-                <option value="Spin-off">Spin-off</option>
+              <option selected>Salary</option>
+              <option value="Spin-off">Spin-off</option>
               </select>
             </div>
             <div class="income-btns">

@@ -5,6 +5,10 @@ const userNameTag = document.getElementById('header-links-info');
 
 export const counterExpenses = async () => {
   const userId = LocalStorageService.getPersonalData().id;
+  const balanceInfo = document.getElementById('header-links-balance');
+  const balance = LocalStorageService.getBalance();
+
+  balanceInfo.innerText = ` ${balance} BYN`;
 
   userNameTag.innerText = `${LocalStorageService.getPersonalData().firstName} ${
     LocalStorageService.getPersonalData().lastName
@@ -27,8 +31,6 @@ export const counterExpenses = async () => {
   Object.values(expenses).map((expense) =>
     expense.userId === userId ? expensesArr.push(expense) : false
   );
-
-  console.log(expensesArr);
 
   const foodValues = [];
   expensesArr.map((item) => {

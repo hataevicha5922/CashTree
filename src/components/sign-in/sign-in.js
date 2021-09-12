@@ -1,6 +1,6 @@
 import { signIn } from '../../api/api-handlers';
 import { routes } from '../../shared/constants/routs';
-import { setToken } from '../../shared/ls-service';
+import { setToken, LocalStorageService } from '../../shared/ls-service';
 import {
   passwordLengthValidator,
   emailLengthValidator,
@@ -40,7 +40,7 @@ export const signInHandler = () => {
     signIn(email, password).then((response) => {
       if (response) {
         const { idToken: token } = response.data;
-        setToken(token);
+        LocalStorageService.setToken(token);
         preloader.style.display = 'none';
         window.location.href = routes.main_page;
       } else {

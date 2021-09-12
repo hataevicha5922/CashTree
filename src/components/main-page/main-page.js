@@ -1,8 +1,10 @@
 import moment from 'moment';
 import { LocalStorageService } from '../../shared/ls-service';
-import { getIncome, deleteIncome } from '../../api/api-handlers';
+import { getIncome } from '../../api/api-handlers';
 import { getExpenses } from '../../api/api-handlers';
-import { expensesResult } from '../expenses-handler/expenses-handler';
+
+export let balanceValue;
+const btnExpenses = document.getElementById('btn-expenses');
 
 export const showBalance = async () => {
   const userId = LocalStorageService.getPersonalData().id;
@@ -43,8 +45,17 @@ export const showBalance = async () => {
     return +res + +item.valueExpenses;
   }, 0);
 
-  let balanceValue = resIncome - resExpenses;
+  balanceValue = resIncome - resExpenses;
 
+  if (balanceValue > 100 && balanceValue <= 500) {
+    balance.style.color = '#b3b300';
+  } else if (balanceValue <= 100 && balanceValue > 0) {
+    balance.style.color = '#C34A36';
+  } else if (balanceValue == 0) {
+    balance.style.color = '#e60000';
+  }
+
+  LocalStorageService.setBalance(balanceValue);
   balance.innerText = ` ${balanceValue} BYN`;
 };
 

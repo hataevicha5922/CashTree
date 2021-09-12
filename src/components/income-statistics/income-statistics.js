@@ -5,6 +5,10 @@ const userNameTag = document.getElementById('header-links-info');
 
 export const counterSalary = async () => {
   const userId = LocalStorageService.getPersonalData().id;
+  const balanceInfo = document.getElementById('header-links-balance');
+  const balance = LocalStorageService.getBalance();
+
+  balanceInfo.innerText = ` ${balance} BYN`;
 
   userNameTag.innerText = `${LocalStorageService.getPersonalData().firstName} ${
     LocalStorageService.getPersonalData().lastName

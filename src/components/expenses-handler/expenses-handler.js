@@ -4,14 +4,21 @@ import { LocalStorageService } from '../../shared/ls-service';
 import { routes } from '../../shared/constants/routs';
 
 const userNameTag = document.getElementById('header-links-info');
+const deleteValue = document.getElementById('delete-value');
 
 export let expensesResult;
+
 export const renderExpenses = async () => {
   const expensesContainer = document.getElementById('expenses-container');
   const userId = LocalStorageService.getPersonalData().id;
   const expensesSum = document.getElementById('expenses-sum');
+  const container = document.querySelector('.expenses');
+  const balanceInfo = document.getElementById('header-links-balance');
+  const balance = LocalStorageService.getBalance();
 
   let expenses;
+
+  balanceInfo.innerText = ` ${balance} BYN`;
 
   expensesContainer.innerHTML = null;
 
@@ -35,6 +42,12 @@ export const renderExpenses = async () => {
     expense.userId === userId ? expensesArr.push(expense) : false
   );
 
+  if (expensesArr.length >= 7) {
+    container.style.height = 100 + '%';
+  } else {
+    container.style.height = 100 + 'vh';
+  }
+
   expensesArr.forEach((expense) => {
     const expenseCard = document.createElement('div');
     const incomeWrapper = document.createElement('div');
@@ -44,7 +57,6 @@ export const renderExpenses = async () => {
     const userName = document.createElement('span');
     const incomeDate = document.createElement('span');
     const buttonWrapper = document.createElement('div');
-
     const buttonDelete = document.createElement('button');
 
     expenseCard.className = 'income-card';
@@ -67,13 +79,12 @@ export const renderExpenses = async () => {
     expensesContainer.append(expenseCard);
 
     buttonDelete.onclick = (event) => {
-      console.log('check');
       event.preventDefault();
       const expensesValue = document.querySelector('.exp-value');
+
       expensesValue.innerText = `${expense.categoriesExpenses}: ${
         expense.valueExpenses
       } BYN ${moment(expense.date).format('MMM Do YY')} ?`;
-      const deleteValue = document.getElementById('delete-value');
       deleteValue.onclick = async () => {
         await deleteExpenses(expense.id);
         window.location.href = routes.main_page;

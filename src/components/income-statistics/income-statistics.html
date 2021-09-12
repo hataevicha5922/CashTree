@@ -15,10 +15,21 @@
       <header class="header">
         <div class="container">
           <div class="header-wrapper-income-history">
-            <h1 class="header-title"><a href="main-page.html" class="">CashTree</a></h1>
+            <div class="dropdown">
+              <h1 class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">CashTree</h1>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="main-page.html">Main page</a></li>
+                <li><a class="dropdown-item" href="income.html"> Add Income</a></li>
+                <li><a class="dropdown-item" href="income-handler.html">Show Income</a></li>
+                <li><a class="dropdown-item" href="expenses.html">Add Expenses</a></li>
+                <li><a class="dropdown-item" href="expenses-handler.html">Show Expenses</a></li>
+                <li><a class="dropdown-item" href="expenses-statistics.html">Expenses Statistics</a></li>
+              </ul>
+            </div>
             <div class="header-wrapper-links">
-            <p class="header-links-info" id="header-links-info">Hataevicha5922@gmail.com</p>
-            <div class="header-links-link">
+             <p class="header-links-info" id="header-links-info"></p>
+             <p class="header-links-info header-links-info-balance" id="header-links-balance">Balance</p>
+             <div class="header-links-link">
                 <button type="button" class="btn btn-secondary" id="logoutBtn">Log Out</button>
             </div>
           </div>

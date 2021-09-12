@@ -3,36 +3,50 @@
 .income-history {
   background: linear-gradient(#58b6b9, #edf1cf);
 
-  a {
-    color: $mainColor;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 10px 30px;
-    opacity: 0.7;
-  }
-
-  a:hover {
-    border-bottom: 1px solid;
-  }
-
   .header {
-    padding: 20px;
+    .header-wrapper-income-history {
+      padding: 20px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
 
-    .container {
-      .header-wrapper-income-history {
+      .dropdown {
+        .btn-secondary {
+          letter-spacing: 2px;
+          font-size: 20px;
+          color: #232121;
+          background-color: rgba($color: #000000, $alpha: 0);
+          border: none;
+        }
+
+        &-menu-dark {
+          background-color: #9da3a9;
+        }
+      }
+
+      .header-wrapper-links {
+        width: 40%;
         display: flex;
         align-items: baseline;
         justify-content: space-between;
 
-        .header-wrapper-links {
-          display: flex;
-          align-items: baseline;
-          justify-content: space-between;
-          width: 30%;
+        .header-links-info-balance {
+          color: green;
+          font-weight: bold;
+          font-size: 20px;
         }
+      }
+
+      a {
+        color: $mainColor;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 30px;
+        opacity: 0.7;
       }
     }
   }
+
   .income-sum {
     margin: 0 auto;
     text-align: center;
@@ -95,7 +109,6 @@
         margin-right: 20px;
         border-radius: 50%;
         border: none;
-        background-image: url('../images/pan.jpg');
         background-repeat: no-repeat;
         background-position-x: center;
         background-position-y: center;
