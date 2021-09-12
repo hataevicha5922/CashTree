@@ -10,7 +10,6 @@ import { renderDate, showBalance } from './components/main-page/main-page';
 import { renderExpenses } from './components/expenses-handler/expenses-handler';
 import { counterSalary } from './components/income-statistics/income-statistics';
 import { counterExpenses } from './components/expenses-statistics/expenses-statistics';
-import { showMenu } from './shared/constants/data-handlers';
 
 window.onload = () => {
   const pathname = Object.values(paths).find(
@@ -38,7 +37,6 @@ window.onload = () => {
     case paths.expenses:
       expensesHandler();
       logoutBtnHandler();
-      // showMenu();
       break;
     case paths.income_handler:
       renderIncome();
