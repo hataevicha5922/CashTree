@@ -1,5 +1,4 @@
 import { signUp } from '../../api/api-handlers';
-// import { setUserEmail, LocalStorageService } from '../../shared/ls-service';
 import { routes } from '../../shared/constants/routs';
 
 import {
@@ -8,15 +7,10 @@ import {
   nameValidator,
 } from '../../shared/validators';
 import {
-  showPasswordsComparerError,
-  hidePasswordsComparerError,
-  hideEmailErrorMessage,
-  showEmailErrorMessage,
-  showUserNameErrorMessage,
-  hideUserNameErrorMessage,
-  showUserSurnameErrorMessage,
-  hideUserSurnameErrorMessage,
+  showErrorMessage,
+  hideErrorMessage,
 } from '../../shared/error-handlers';
+import { ERROR_MESSAGES } from '../../shared/constants/error-messages';
 
 export const singUpHandler = () => {
   const signUpForm = document.querySelector('.sign-up_form');
@@ -56,7 +50,7 @@ export const singUpHandler = () => {
     if (nameValidator(userNameInput.value)) {
       formFields.userName.isValid = true;
       userNameInput.classList.remove('invalid');
-      hideUserNameErrorMessage();
+      hideErrorMessage('userNameError');
     } else {
       formFields.userName.isValid = false;
       userNameInput.classList.add('invalid');
@@ -66,15 +60,15 @@ export const singUpHandler = () => {
 
   userNameInput.onblur = () => {
     !nameValidator(userNameInput.value)
-      ? showUserNameErrorMessage()
-      : hideUserNameErrorMessage();
+      ? showErrorMessage('userNameError', ERROR_MESSAGES.userName)
+      : hideErrorMessage('userNameError');
   };
 
   userSurnameInput.oninput = () => {
     if (nameValidator(userSurnameInput.value)) {
       formFields.userSurname.isValid = true;
       userSurnameInput.classList.remove('invalid');
-      hideUserSurnameErrorMessage();
+      hideErrorMessage('userSurnameError');
     } else {
       formFields.userSurname.isValid = false;
       userSurnameInput.classList.add('invalid');
@@ -84,14 +78,14 @@ export const singUpHandler = () => {
 
   userSurnameInput.onblur = () => {
     !nameValidator(userSurnameInput.value)
-      ? showUserSurnameErrorMessage()
-      : hideUserSurnameErrorMessage();
+      ? showErrorMessage('userSurnameError', ERROR_MESSAGES.userSurnameError)
+      : hideErrorMessage('userSurnameError');
   };
 
   emailInput.oninput = () => {
     if (emailLengthValidator(emailInput.value)) {
       formFields.email.isValid = true;
-      hideEmailErrorMessage();
+      hideErrorMessage('emailError');
       emailInput.classList.remove('invalid');
     } else {
       formFields.email.isValid = false;
@@ -102,8 +96,8 @@ export const singUpHandler = () => {
 
   emailInput.onblur = () => {
     !emailLengthValidator(emailInput.value)
-      ? showEmailErrorMessage()
-      : hideEmailErrorMessage();
+      ? showErrorMessage('emailError', ERROR_MESSAGES.email)
+      : hideErrorMessage('emailError');
   };
 
   password_1.oninput = () => {
@@ -121,8 +115,11 @@ export const singUpHandler = () => {
 
   password_2.onblur = () => {
     password_1.value !== password_2.value
-      ? showPasswordsComparerError()
-      : hidePasswordsComparerError();
+      ? showErrorMessage(
+          'passwordsCompereError',
+          ERROR_MESSAGES.passwordsComparer
+        )
+      : hideErrorMessage('passwordsCompereError');
   };
 
   const checkFormValid = () => {

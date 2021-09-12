@@ -1,16 +1,15 @@
 import { signIn } from '../../api/api-handlers';
 import { routes } from '../../shared/constants/routs';
-import { setToken, LocalStorageService } from '../../shared/ls-service';
+import { LocalStorageService } from '../../shared/ls-service';
 import {
   passwordLengthValidator,
   emailLengthValidator,
 } from '../../shared/validators';
 import {
-  showPasswordLengthErrorMessage,
-  hidePasswordLengthErrorMessage,
-  showEmailErrorMessage,
-  hideEmailErrorMessage,
+  showErrorMessage,
+  hideErrorMessage,
 } from '../../shared/error-handlers';
+import { ERROR_MESSAGES } from '../../shared/constants/error-messages';
 
 export const signInHandler = () => {
   const signInForm = document.querySelector('.sign-in_form');
@@ -52,7 +51,7 @@ export const signInHandler = () => {
   passwordInput.oninput = () => {
     if (passwordLengthValidator(passwordInput.value)) {
       formFields.password.isValid = true;
-      hidePasswordLengthErrorMessage();
+      hideErrorMessage('passwordLengthError');
       passwordInput.classList.remove('invalid');
     } else {
       formFields.password.isValid = false;
@@ -63,14 +62,14 @@ export const signInHandler = () => {
 
   passwordInput.onblur = () => {
     !passwordLengthValidator(passwordInput.value)
-      ? showPasswordLengthErrorMessage()
-      : hidePasswordLengthErrorMessage();
+      ? showErrorMessage('passwordLengthError', ERROR_MESSAGES.password_length)
+      : hideErrorMessage('passwordLengthError');
   };
 
   emailInput.oninput = () => {
     if (emailLengthValidator(emailInput.value)) {
       formFields.email.isValid = true;
-      hideEmailErrorMessage();
+      hideErrorMessage('emailError');
       emailInput.classList.remove('invalid');
     } else {
       formFields.email.isValid = false;
@@ -81,8 +80,8 @@ export const signInHandler = () => {
 
   emailInput.onblur = () => {
     !emailLengthValidator(emailInput.value)
-      ? showEmailErrorMessage()
-      : hideEmailErrorMessage();
+      ? showErrorMessage('emailError', ERROR_MESSAGES.email)
+      : hideErrorMessage('emailError');
   };
 
   const checkFormValid = () => {

@@ -3,9 +3,10 @@ import { setIncome } from '../../api/api-handlers';
 import { routes } from '../../shared/constants/routs';
 import { LocalStorageService } from '../../shared/ls-service';
 import {
-  showIncomeValueError,
-  hideIncomeValueError,
+  showErrorMessage,
+  hideErrorMessage,
 } from '../../shared/error-handlers';
+import { ERROR_MESSAGES } from '../../shared/constants/error-messages';
 import { incomeValidator } from '../../shared/validators';
 
 export const incomeHandler = () => {
@@ -31,10 +32,10 @@ export const incomeHandler = () => {
 
   incomeInputValue.oninput = () => {
     if (incomeValidator(incomeInputValue.value)) {
-      hideIncomeValueError();
+      hideErrorMessage('incomeValueError');
       incomeBtn.removeAttribute('disabled');
     } else {
-      showIncomeValueError();
+      showErrorMessage('incomeValueError', ERROR_MESSAGES.incomeValueError);
       incomeBtn.setAttribute('disabled', true);
     }
   };

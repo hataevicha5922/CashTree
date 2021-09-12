@@ -4,9 +4,10 @@ import { routes } from '../../shared/constants/routs';
 import { LocalStorageService } from '../../shared/ls-service';
 import { incomeValidator } from '../../shared/validators';
 import {
-  showExpensesValueError,
-  hideExpensesValueError,
+  showErrorMessage,
+  hideErrorMessage,
 } from '../../shared/error-handlers';
+import { ERROR_MESSAGES } from '../../shared/constants/error-messages';
 
 export const expensesHandler = () => {
   const expensesForm = document.getElementById('expenses-form');
@@ -31,10 +32,10 @@ export const expensesHandler = () => {
 
   expensesInputValue.oninput = () => {
     if (incomeValidator(expensesInputValue.value)) {
-      hideExpensesValueError();
+      hideErrorMessage('expensesValueError');
       expensesBtn.removeAttribute('disabled');
     } else {
-      showExpensesValueError();
+      showErrorMessage('expensesValueError', ERROR_MESSAGES.incomeValueError);
       expensesBtn.setAttribute('disabled', true);
     }
   };

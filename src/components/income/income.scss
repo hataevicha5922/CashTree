@@ -64,6 +64,10 @@
         align-items: center;
         justify-content: space-between;
 
+        .input-error {
+          top: 35px;
+        }
+
         .income-form-input {
           border: 1px solid;
           margin-right: 20px;

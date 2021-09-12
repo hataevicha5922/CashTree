@@ -96,7 +96,7 @@ export const signUp = async (user) => {
     );
     await signIn(email, password);
   } catch (error) {
-    showErrorNotification(error);
+    showErrorAuthMessage(error);
   }
 };
 
