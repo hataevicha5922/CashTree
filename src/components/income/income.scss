@@ -12,22 +12,39 @@
     align-items: baseline;
     justify-content: space-between;
 
+    .dropdown {
+      .btn-secondary {
+        letter-spacing: 2px;
+        font-size: 20px;
+        color: #232121;
+        background-color: rgba($color: #000000, $alpha: 0);
+        border: none;
+      }
+
+      &-menu-dark {
+        background-color: #9da3a9;
+      }
+    }
+
     .header-wrapper-links {
       width: 40%;
       display: flex;
       align-items: baseline;
       justify-content: space-between;
+
+      .header-links-info-balance {
+        color: green;
+        font-weight: bold;
+        font-size: 20px;
+      }
     }
+
     a {
       color: $mainColor;
       font-size: 20px;
       font-weight: 500;
       padding: 10px 30px;
       opacity: 0.7;
-    }
-
-    a:hover {
-      border-bottom: 1px solid;
     }
   }
 
@@ -52,19 +69,19 @@
           margin-right: 20px;
         }
 
-        .income-form-select {
-          border: 1px solid;
-          width: 50%;
-        }
-
         .currency {
           width: 30%;
           margin-right: 0;
         }
 
-        #incomeValueError {
+        #expensesValueError {
           position: absolute;
           bottom: -40px !important;
+        }
+
+        .income-form-select {
+          border: 1px solid;
+          width: 50%;
         }
       }
 

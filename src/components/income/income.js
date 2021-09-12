@@ -15,6 +15,10 @@ export const incomeHandler = () => {
   const incomeBtn = document.getElementById('incomeBtn');
   const userName = document.getElementById('header-links-info');
   const preloader = document.getElementById('preloader');
+  const balanceInfo = document.getElementById('header-links-balance');
+  const balance = LocalStorageService.getBalance();
+
+  balanceInfo.innerText = ` ${balance} BYN`;
 
   userName.innerText = userName.innerText = `${
     LocalStorageService.getPersonalData().firstName
@@ -54,6 +58,5 @@ export const incomeHandler = () => {
       }
       preloader.style.display = 'none';
     });
-    // .catch(error = );
   });
 };

@@ -1,5 +1,5 @@
 import { signUp } from '../../api/api-handlers';
-import { setUserEmail } from '../../shared/ls-service';
+// import { setUserEmail, LocalStorageService } from '../../shared/ls-service';
 import { routes } from '../../shared/constants/routs';
 
 import {

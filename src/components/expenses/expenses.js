@@ -15,6 +15,10 @@ export const expensesHandler = () => {
   const userName = document.getElementById('header-links-info');
   const expensesBtn = document.getElementById('expensesBtn');
   const preloader = document.getElementById('preloader');
+  const balanceInfo = document.getElementById('header-links-balance');
+  const balance = LocalStorageService.getBalance();
+
+  balanceInfo.innerText = ` ${balance} BYN`;
 
   userName.innerText = userName.innerText = `${
     LocalStorageService.getPersonalData().firstName
@@ -24,8 +28,6 @@ export const expensesHandler = () => {
   expensesBtn.addEventListener('onclick', () => {
     preloader.style.display = 'block';
   });
-
-  console.log(expensesInputValue);
 
   expensesInputValue.oninput = () => {
     if (incomeValidator(expensesInputValue.value)) {
@@ -47,12 +49,18 @@ export const expensesHandler = () => {
   expensesForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    (expenses.valueExpenses = expensesInputValue.value),
-      (expenses.categoriesExpenses = expensesCategories.value),
-      setExpenses(expenses).then((response) => {
-        if (response) {
-          window.location.href = routes.main_page;
-        }
-      });
+    if (expensesInputValue.value > +balance) {
+      alert('Not enough cash');
+    } else {
+      (expenses.valueExpenses = expensesInputValue.value),
+        (expenses.categoriesExpenses = expensesCategories.value),
+        setExpenses(expenses)
+          .then((response) => {
+            if (response) {
+              window.location.href = routes.main_page;
+            }
+          })
+          .catch((err) => console.log(err));
+    }
   });
 };
