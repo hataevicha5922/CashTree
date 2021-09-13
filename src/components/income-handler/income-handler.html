@@ -39,8 +39,17 @@
       </header>
       <main class="sign-in-main income income-handler">
         <div class="container">
-          <input type="date" class="date-income" id="date-income">
-          <button type="button" class="btn btn-light" id="show-income">Show</button>
+
+          <div class="period">
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">From</span>
+              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  id="start-date">
+              <span class="input-group-text" id="inputGroup-sizing-sm">to</span>
+              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="end-date">
+              <button type="button" class="btn btn-light" id="show-income">Show</button>
+            </div>
+          </div>
+
           <p class="income-sum"></p>
           <div class="income-container" id="income-container"></div>
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

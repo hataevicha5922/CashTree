@@ -103,14 +103,19 @@ export const signUp = async (user) => {
 export const setIncome = (income) => {
   const { userId, valueIncome, categories, currency, date } = income;
 
-  return axios.post(`${databaseURL}/income.json`, {
-    valueIncome,
-    categories,
-    currency,
-    date,
-    userId,
-    incomeId: uuidv4(),
-  });
+  return axios
+    .post(`${databaseURL}/income.json`, {
+      valueIncome,
+      categories,
+      currency,
+      date,
+      userId,
+      incomeId: uuidv4(),
+    })
+    .catch((err) => {
+      console.log(err);
+      showErrorNotification(err);
+    });
 };
 
 export const getIncome = () => {
