@@ -39,6 +39,16 @@
       </header>
       <main class="sign-in-main expenses income-handler">
         <div class="container">
+          <div class="period">
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">From</span>
+              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  id="start-date">
+              <span class="input-group-text" id="inputGroup-sizing-sm">to</span>
+              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="end-date">
+              <button type="button" class="btn btn-light" id="show-expenses">Show</button>
+            </div>
+          </div>
+
           <p class="expenses-sum" id="expenses-sum"></p>
           <div class="expenses-container" id="expenses-container"></div>
           <div

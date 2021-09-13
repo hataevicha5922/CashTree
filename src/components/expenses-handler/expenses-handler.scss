@@ -53,15 +53,32 @@
     }
   }
 
-  .expenses-sum {
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
   .income-handler {
-    height: 100vh;
+    min-height: 100vh;
+
+    .period {
+      width: 35%;
+      margin-left: auto;
+
+      .form-control {
+        margin-right: 5px;
+        font-size: 13px;
+      }
+    }
+
+    .expenses-sum {
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .expenses-sum {
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
 
     .expenses-container {
       height: 100%;

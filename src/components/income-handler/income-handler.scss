@@ -2,6 +2,7 @@
 
 .income-history {
   background: linear-gradient(#58b6b9, #edf1cf);
+  min-height: 100vh;
 
   .header {
     .header-wrapper-income-history {
@@ -55,7 +56,17 @@
   }
 
   .income-handler {
-    height: 100vh;
+    min-height: 100vh;
+
+    .period {
+      width: 35%;
+      margin-left: auto;
+
+      .form-control {
+        margin-right: 5px;
+        font-size: 13px;
+      }
+    }
 
     .income-container {
       height: 100%;
